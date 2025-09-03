@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Simple HTML5 Website</title>
+  <meta name="description" content="A very simple static HTML5 webpage with headings, image, link, form, and semantic elements." />
+  <style>
+    /* Minimal friendly styling (pure HTML/CSS) */
+    :root { --max: 900px; }
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.6; margin: 0; color: #222; }
+    header, nav, main, section, footer { padding: 16px; }
+    header { background: #f5f5f5; border-bottom: 1px solid #ddd; }
+    .container { max-width: var(--max); margin: 0 auto; }
+    nav a { margin-right: 12px; text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    img { max-width: 100%; height: auto; border-radius: 8px; display: block; }
+    figure { margin: 0; }
+    figcaption { font-size: 0.9rem; color: #555; margin-top: 8px; }
+    main { padding-top: 8px; padding-bottom: 24px; }
+    .hero { display: grid; gap: 16px; grid-template-columns: 1fr; align-items: start; }
+    @media (min-width: 700px) { .hero { grid-template-columns: 1.2fr 0.8fr; } }
+    form { display: grid; gap: 12px; max-width: 420px; margin-top: 8px; }
+    label { font-weight: 600; }
+    input[type="text"], input[type="email"] {
+      padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;
+    }
+    input[type="submit"] {
+      padding: 10px 16px; border: 0; border-radius: 8px; cursor: pointer; background: #0a7; color: #fff; font-weight: 600;
+    }
+    footer { background: #f5f5f5; border-top: 1px solid #ddd; text-align: center; }
+    small a { color: inherit; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>My Simple HTML5 Website</h1>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="https://example.com" target="_blank" rel="noopener">Visit Example.com</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about" class="hero" aria-labelledby="welcome-heading">
+      <div>
+        <h2 id="welcome-heading">Welcome 👋</h2>
+        <p>
+          This is a basic static page built with pure HTML5. It shows headings, a paragraph, an image,
+          a link, and a simple form. Feel free to edit the text and make it yours.
+        </p>
+        <p>
+          Email me at <a href="mailto:yourname@example.com">yourname@example.com</a>.
+        </p>
+      </div>
+      <figure>
+        <!-- Use your own local image here: put "sample.jpg" inside the "images" folder -->
+        <img src="images/sample.jpg" alt="A sample scenic placeholder image" />
+
+        <!-- If you don't have a local image yet, temporarily comment-in the line below instead:
+        <img src="https://via.placeholder.com/800x500?text=Sample+Image" alt="Placeholder image">
+        -->
+
+        <figcaption>A sample image stored locally in <code>images/</code>. Replace it with your own.</figcaption>
+      </figure>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact Me</h2>
+      <form action="#" method="get">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Your full name" required />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required />
+
+        <input type="submit" value="Send" />
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <small>
+        © 2025 Your Name •
+        <a href="https://github.com/your-username/simple-static-site" target="_blank" rel="noopener">GitHub Repo</a>
+      </small>
+    </div>
+  </footer>
+</body>
+</html>
